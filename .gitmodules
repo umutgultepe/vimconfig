@@ -25,3 +25,21 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = git@github.com:derekwyatt/vim-scala.git
+[submodule "bundle/vim-trailing-whitespace"]
+	path = bundle/vim-trailing-whitespace
+	url = git@github.com:bronson/vim-trailing-whitespace.git
+[submodule "bundle/vim-sensible"]
+	path = bundle/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
+[submodule "bundle/unite.vim"]
+	path = bundle/unite.vim
+	url = git@github.com:Shougo/unite.vim.git
+[submodule "bundle/vimproc.vim"]
+	path = bundle/vimproc.vim
+	url = git@github.com:Shougo/vimproc.vim.git
+[submodule "bundle/ag.vim"]
+	path = bundle/ag.vim
+	url = git@github.com:rking/ag.vim.git
+[submodule "bundle/ctrlp.vim"]
+	path = bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
