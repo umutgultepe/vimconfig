@@ -3,11 +3,21 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
+" Folding
+set foldenable
+set foldlevelstart=10
+set foldnestmax=10
+set foldmethod=indent
+
+nnoremap <space> za
+
 " Use spaces instead of tabs
 set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
+
+set cursorline
 
 " ctags
 set tags=tags;/
@@ -80,7 +90,6 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
 map <c-space> ?
 
 " Smart way to move between windows
@@ -88,6 +97,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Window resizing
+nnoremap <C-m> <C-W>>
+nnoremap <C-n> <C-W><
 
 " Format scala code
 let g:scala_sort_across_groups=1
@@ -207,6 +220,10 @@ if executable('ag')
 
 endif
 
+" CtrlP bindings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_working_path_mode = 0
+
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
@@ -275,14 +292,9 @@ try
   call unite#filters#matcher_default#use(['matcher_fuzzy'])
 catch
 endtry
-" search a file in the filetree
-nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
-" reset not it is <C-l> normally
-:nnoremap <space>r <Plug>(unite_restart)
 
 " --- type ° to search the word in all files in the current dir
 nmap m :Ag <c-r>=expand("<cword>")<cr><cr> .
-nnoremap <space>/ :Ag
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
