@@ -104,8 +104,9 @@ nnoremap <C-n> <C-W><
 
 " Format scala code
 let g:scala_sort_across_groups=1
-au BufEnter *.scala setl formatprg=java\ -jar\ /Users/stefan/exec/scalariform.jar\ -f\ -q\ --preferenceFile=/Users/stefan/myfo/scala/scalariform-formatter.properties\ --stdin\ --stdout
+au BufEnter *.scala setl formatprg=scalariform\ -f\ -q\ +compactControlReadability\ +alignParameters\ +alignSingleLineCaseStatements\ +doubleIndentClassDeclaration\ +preserveDanglingCloseParenthesis\ +rewriteArrowSymbols\ +preserveSpaceBeforeArguments\ --stdin\ --stdout
 nmap <leader>m :SortScalaImports<CR>gggqG<C-o><C-o><leader><w>
+nnoremap <C-o> "+y
 
 " NerdTree
 map <leader>n :NERDTreeToggle<cr>
@@ -299,5 +300,12 @@ nmap m :Ag <c-r>=expand("<cword>")<cr><cr> .
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" Copy to clipboard
+nnoremap <C-o> "+y
+
+" Paste to clipboard
+nnoremap <C-i> "+p
+
 " Browse ctags
 nnoremap <leader>. :CtrlPTag<cr>
+
