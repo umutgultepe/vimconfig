@@ -52,3 +52,6 @@
 [submodule "bundle/thrift.vim"]
 	path = bundle/thrift.vim
 	url = https://github.com/solarnz/thrift.vim
+[submodule "/Users/ugultepe/.vim/bundle/vim-airline"]
+	path = /Users/ugultepe/.vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
