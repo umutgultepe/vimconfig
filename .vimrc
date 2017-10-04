@@ -308,4 +308,7 @@ nnoremap <C-i> "+p
 
 " Browse ctags
 nnoremap <leader>. :CtrlPTag<cr>
+nnoremap g] :LHTag \<<c-r>=expand("<cword>")<cr>\><cr>
 
+" Search/replace in visual selection
+:vnoremap <M-/> <Esc>/\%V

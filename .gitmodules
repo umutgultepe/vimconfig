@@ -55,3 +55,9 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "bundle/lh-tags"]
+	path = bundle/lh-tags
+	url = https://github.com/luchermitte/lh-tags
+[submodule "bundle/lh-vim-lib"]
+	path = bundle/lh-vim-lib
+	url = https://github.com/LucHermitte/lh-vim-lib
