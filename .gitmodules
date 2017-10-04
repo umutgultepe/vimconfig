@@ -61,3 +61,6 @@
 [submodule "bundle/lh-vim-lib"]
 	path = bundle/lh-vim-lib
 	url = https://github.com/LucHermitte/lh-vim-lib
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less
