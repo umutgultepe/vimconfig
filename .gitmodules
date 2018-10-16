@@ -64,3 +64,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = https://tpope.io/vim/unimpaired.git
