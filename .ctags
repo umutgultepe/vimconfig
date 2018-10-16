@@ -12,6 +12,7 @@
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
 --langdef=thrift
 --langmap=thrift:.thrift
+--regex-thrift=/^[ \t]*union[ \t]*([a-zA-Z0-9_]+)/\1/c,classes/
 --regex-thrift=/^[ \t]*struct[ \t]*([a-zA-Z0-9_]+)/\1/c,classes/
 --regex-thrift=/^[ \t]*enum[ \t]*([a-zA-Z0-9_]+)/\1/T,types/
 --regex-thrift=/^[ \t]*[a-zA-Z0-9_<>\.]+[ \t]*([a-zA-Z0-9_]+)\(/\1/m,methods/
@@ -20,3 +21,4 @@
 --python-kinds=-i
 --exclude=.git
 --exclude=*/target/*
+--exclude=*/.pants.d/gen/*
