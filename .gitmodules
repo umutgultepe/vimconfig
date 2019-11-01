@@ -67,3 +67,6 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = https://tpope.io/vim/unimpaired.git
+[submodule "bundle/black"]
+	path = bundle/black
+	url = https://github.com/psf/black.git
