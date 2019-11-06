@@ -282,8 +282,10 @@ set guioptions-=T
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
+let linelength='100'
+
 if (exists('+colorcolumn'))
-    set colorcolumn=80
+    let &colorcolumn=linelength
     highlight ColorColumn ctermbg=9
 endif
 
@@ -302,3 +304,24 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Browse ctags
 nnoremap <leader>. :CtrlPTag<cr>
+
+" Black formatter configuration
+let g:black_virtualenv = '<path-to-env>'
+let g:black_linelength = linelength
+
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_pylint_exec = '<link-to-pylint>'
+let g:syntastic_python_pylint_args = '--rcfile <link-to-pylintrc>'
+
+nnoremap <leader>l :SyntasticCheck<CR>
+nnoremap <leader>f :Black<CR>
