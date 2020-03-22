@@ -76,3 +76,12 @@
 [submodule "bundle/csv"]
 	path = bundle/csv
 	url = https://github.com/chrisbra/csv.vim
+[submodule "bundle/vim-test"]
+	path = bundle/vim-test
+	url = https://github.com/janko/vim-test
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "bundle/pytest-vim-compiler"]
+	path = bundle/pytest-vim-compiler
+	url = https://github.com/5long/pytest-vim-compiler

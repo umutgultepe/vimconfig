@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+set clipboard=unnamed
+
 filetype plugin indent on
 
 " Folding
@@ -323,5 +325,31 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_pylint_exec = '<link-to-pylint>'
 let g:syntastic_python_pylint_args = '--rcfile <link-to-pylintrc>'
 
-nnoremap <leader>l :SyntasticCheck<CR>
+nnoremap <leader>h :SyntasticCheck<CR>
 nnoremap <leader>f :Black<CR>
+
+
+" Dispatch
+let g:dispatch_compilers = {}
+let g:dispatch_compilers['run_pytests_x'] = 'pytest'
+
+" Vim-test
+let test#strategy = {
+  \ 'nearest': 'dispatch',
+  \ 'file':    'dispatch_background',
+  \ 'suite':   'dispatch_background',
+\}
+let test#python#runner = 'pytest'
+let test#filename_modifier = ':.'
+let test#python#pytest#executable = 'run_pytests_x'
+let test#python#pytest#options = "--nomigrations --tb=short -q"
+
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+map <leader>j :TestNearest<cr>
+map <leader>k :TestFile<cr>
+map <leader>l :TestLast<cr>
